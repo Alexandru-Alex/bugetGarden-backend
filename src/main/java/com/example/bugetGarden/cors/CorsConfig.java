@@ -12,10 +12,14 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedOrigins("*")
+                registry.addMapping("/**") // toate endpoint-urile
+                        .allowedOrigins(
+                                "https://bugetgarden-frontend.vercel.app", // frontend-ul tău
+                                "http://localhost:3000" // pentru dev local
+                        )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*");
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
             }
         };
     }
