@@ -10,4 +10,5 @@ public class BugetGardenApplication {
 		SpringApplication.run(BugetGardenApplication.class, args);
 	}
 
+
 }
